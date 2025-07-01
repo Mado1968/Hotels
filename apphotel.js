@@ -15,8 +15,12 @@ Hotels.push(Hotel4);
 
 
 
+
 function VeureHotels(){
 	/*var Hotels=[ ];
+function VeureHotels(Hotels){
+	var Hotels=[ ];
+
 var Hotel1= new hotel("sofia",500,12,1400);
 Hotels.push(Hotel1);
 
@@ -33,7 +37,7 @@ Hotels.push(Hotel4);
 let visual;
 let valor1;
 let valor2;
-let valor3;*/
+let valor3;
 
 // Suposem que 'Hotels' és un array d'objectes hotel
 var output = ""; // Variable per construir el contingut HTML
