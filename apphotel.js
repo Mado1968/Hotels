@@ -15,12 +15,8 @@ Hotels.push(Hotel4);
 
 
 
-
 function VeureHotels(){
 	/*var Hotels=[ ];
-function VeureHotels(Hotels){
-	var Hotels=[ ];
-
 var Hotel1= new hotel("sofia",500,12,1400);
 Hotels.push(Hotel1);
 
@@ -37,7 +33,7 @@ Hotels.push(Hotel4);
 let visual;
 let valor1;
 let valor2;
-let valor3;
+let valor3;*/
 
 // Suposem que 'Hotels' és un array d'objectes hotel
 var output = ""; // Variable per construir el contingut HTML
@@ -90,10 +86,31 @@ function CreaHotel(){ // Removed Hotels parameter
 
 
 				let nom=prompt("Nom de l'Hotel?");
-				// Convert prompt results to numbers where appropriate
-				let numHabitacions=parseInt(prompt("Numero d'Habitacions?"), 10);
-				let numPlantes=parseInt(prompt("Quantes plantes té?"), 10);
-				let superficie=parseInt(prompt("Superficie Total de l'edifici?"), 10);
+				if (!nom || nom.trim() === "") {
+					alert("El nom de l'hotel no pot estar buit.");
+					return;
+				}
+
+				let numHabitacionsStr = prompt("Numero d'Habitacions?");
+				let numHabitacions=parseInt(numHabitacionsStr, 10);
+				if (isNaN(numHabitacions)) {
+					alert("El número d'habitacions ha de ser un número vàlid.");
+					return;
+				}
+
+				let numPlantesStr = prompt("Quantes plantes té?");
+				let numPlantes=parseInt(numPlantesStr, 10);
+				if (isNaN(numPlantes)) {
+					alert("El número de plantes ha de ser un número vàlid.");
+					return;
+				}
+
+				let superficieStr = prompt("Superficie Total de l'edifici?");
+				let superficie=parseInt(superficieStr, 10);
+				if (isNaN(superficie)) {
+					alert("La superficie ha de ser un número vàlid.");
+					return;
+				}
 
 				// Ensure the global Hotels array is used
 				let nouHotel= new hotel (nom,numHabitacions,numPlantes,superficie);
@@ -109,8 +126,8 @@ function CreaHotel(){ // Removed Hotels parameter
 															 "<br>Habitacions: " + habDisplay +
 															 "<br>Plantes: " + plantesDisplay +
 															 "<br>Superficie: " + supDisplay;
-				 
-				 VeureHotels(); // Refresh the list automatically
+
+				 // VeureHotels(); // Temporarily commented out for testing
 				}
 
 
