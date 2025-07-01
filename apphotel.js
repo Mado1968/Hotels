@@ -15,7 +15,7 @@ Hotels.push(Hotel4);
 
 
 
-function VeureHotels(Hotels){
+function VeureHotels(){
 	/*var Hotels=[ ];
 var Hotel1= new hotel("sofia",500,12,1400);
 Hotels.push(Hotel1);
@@ -39,7 +39,9 @@ let valor3;*/
 var output = ""; // Variable per construir el contingut HTML
 
 for (var i = 0; i < Hotels.length; i++) {
-    if (Hotels[i].getnom) {
+    // Accessing getters defined with 'get' keyword as properties (no parentheses)
+    // Also, it's better to check if the hotel object itself exists and has the property
+    if (Hotels[i] && Hotels[i].getnom !== undefined) {
         var nomHotel = Hotels[i].getnom;
         var nombreHabitacions = Hotels[i].getnombrehabitacions;
         var nombrePlantes = Hotels[i].getnombreplantes;
@@ -80,24 +82,31 @@ Superficie Total edifici"+valor3;
 }*/
 }
 
-function CreaHotel(Hotels){
+function CreaHotel(){ // Removed Hotels parameter
 
 
 				let nom=prompt("Nom de l'Hotel?");
-				let numHabitacions=prompt("Numero d'Habitacions?");
-				let numPlantes=prompt("Quantes plantes té?");
-				let superficie=prompt("Superficie Total de l'edifici?");
+				// Convert prompt results to numbers where appropriate
+				let numHabitacions=parseInt(prompt("Numero d'Habitacions?"), 10);
+				let numPlantes=parseInt(prompt("Quantes plantes té?"), 10);
+				let superficie=parseInt(prompt("Superficie Total de l'edifici?"), 10);
+
+				// Ensure the global Hotels array is used
 				let nouHotel= new hotel (nom,numHabitacions,numPlantes,superficie);
 				Hotels.push(nouHotel);
-				let valor1=nouHotel.setnombrehabitacionsnombrehabitacions;
-				let valor2=nouHotel.setnombreplantesnombreplantes;
-				let valor3=nouHotel.setsuperfícietotal;
-				let valor4=nouHotel.setnom;
 
+				// Correctly display new hotel's details using getters
+				let nomDisplay = nouHotel.getnom;
+				let habDisplay = nouHotel.getnombrehabitacions;
+				let plantesDisplay = nouHotel.getnombreplantes;
+				let supDisplay = nouHotel.getsuperfícietotal;
 
-				document.getElementById("resultat").innerHTML= valor1+valor2+valor3+"Nom Hotel"+valor4;
+				document.getElementById("resultat").innerHTML= "Hotel Creat: " + nomDisplay +
+															 "<br>Habitacions: " + habDisplay +
+															 "<br>Plantes: " + plantesDisplay +
+															 "<br>Superficie: " + supDisplay;
 				 
-
+				 VeureHotels(); // Refresh the list automatically
 				}
 
 
