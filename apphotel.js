@@ -65,6 +65,36 @@ let valor1;
 let valor2;
 let valor3;*/
 
+    // First, get the target element
+    const llistatHotelsElement = document.getElementById("LlistatHotels");
+
+    // Check if the element exists
+    if (!llistatHotelsElement) {
+        console.error("Error: Element with ID 'LlistatHotels' not found in the DOM.");
+        // Optionally, display a message to the user in another way if appropriate
+        // For example, alert("Could not find where to display the hotels.");
+        return; // Exit the function if the element isn't found
+    }
+
+	/*var Hotels=[ ]; // This local array is now populated from Supabase
+var Hotel1= new hotel("sofia",500,12,1400);
+Hotels.push(Hotel1);
+
+var Hotel2= new hotel("cleopatra",1000,10,2800);
+Hotels.push(Hotel2);
+
+
+var Hotel3= new hotel("Palais", 200,8,3000);
+Hotels.push(Hotel3);
+
+var Hotel4= new hotel("Cosmos", 400,16,6000);
+Hotels.push(Hotel4);
+	
+let visual;
+let valor1;
+let valor2;
+let valor3;*/
+
 // Suposem que 'Hotels' és un array d'objectes hotel
 var output = ""; // Variable per construir el contingut HTML
 
@@ -85,7 +115,8 @@ for (var i = 0; i < Hotels.length; i++) {
 }
 
 // Actualitzem l'element HTML amb l'ID "LlistatHotels"
-document.getElementById("LlistatHotels").innerHTML = output;
+    // Now, safely set the innerHTML because we know llistatHotelsElement exists
+    llistatHotelsElement.innerHTML = output;
 
 
 
