@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 // Supabase project URL
 const supabaseUrl = 'https://gtucfltpqrmftekcvgmd.supabase.co';
@@ -7,3 +7,4 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 
 // Create and export the Supabase client
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
