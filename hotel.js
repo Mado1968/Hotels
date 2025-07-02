@@ -1,16 +1,22 @@
 
-
-		class hotel{
-			constructor(nom,nombrehabitacions,nombreplantes,superfícietotal){
+export class hotel{
+			constructor(nom,nombrehabitacions,nombreplantes,superfícietotal, db_id = null){
 				
 				this._nom=nom;
 				this._nombrehabitacions=nombrehabitacions;
 				this._nombreplantes=nombreplantes;
 				this._superfícietotal=superfícietotal;
+				this._db_id = db_id; // Store the database ID
 
 			}
 
 			//geters i seters
+			get getDbId() {
+				return this._db_id;
+			}
+			set setDbId(id) {
+				this._db_id = id;
+			}
 			get getnom() {
     		return this._nom;
  		    }
