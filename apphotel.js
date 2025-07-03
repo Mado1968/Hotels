@@ -76,7 +76,7 @@ let valor3;*/
         return; // Exit the function if the element isn't found
     }
 
-	/*var Hotels=[ ]; // This local array is now populated from Supabase
+	/*var Hotels=[ ]; // This local array is now populated from Supabase  -- REMOVING DUPLICATE FROM HERE
 var Hotel1= new hotel("sofia",500,12,1400);
 Hotels.push(Hotel1);
 
@@ -428,6 +428,16 @@ async function ModificarHotel() { // Removed Hotels parameter, made async
 	}
 }
 window.ModificarHotel = ModificarHotel; // Make ModificarHotel globally accessible
+
+// Add event listener for the viewHotelsBtn
+document.addEventListener('DOMContentLoaded', () => {
+    const viewHotelsButton = document.getElementById('viewHotelsBtn');
+    if (viewHotelsButton) {
+        viewHotelsButton.addEventListener('click', VeureHotels);
+    } else {
+        console.error("Button with id 'viewHotelsBtn' not found.");
+    }
+});
 
 
 
