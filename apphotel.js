@@ -437,6 +437,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("Button with id 'viewHotelsBtn' not found.");
     }
+
+    const createHotelButton = document.getElementById('createHotelBtn');
+    if (createHotelButton) {
+        createHotelButton.addEventListener('click', CreaHotel);
+    } else {
+        console.error("Button with id 'createHotelBtn' not found.");
+    }
 });
 
 
