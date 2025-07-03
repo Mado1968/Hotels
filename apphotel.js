@@ -126,23 +126,36 @@ let valor2;
 let valor3;*/
 
 // Suposem que 'Hotels' és un array d'objectes hotel
-var output = ""; // Variable per construir el contingut HTML
+var output = `<ul role="list" class="divide-y divide-gray-100">`; // Start of the Tailwind list
 
 for (var i = 0; i < Hotels.length; i++) {
-    // Accessing getters defined with 'get' keyword as properties (no parentheses)
-    // Also, it's better to check if the hotel object itself exists and has the property
     if (Hotels[i] && Hotels[i].getnom !== undefined) {
         var nomHotel = Hotels[i].getnom;
         var nombreHabitacions = Hotels[i].getnombrehabitacions;
         var nombrePlantes = Hotels[i].getnombreplantes;
         var superficieTotal = Hotels[i].getsuperfícietotal;
 
-        // Afegim les dades de l'hotel a la cadena de text
-        output += "Nom Hotel: " + nomHotel + "<br><br> Numero habitacions: " + nombreHabitacions +
-                  "<br><br> Numero de plantes: " + nombrePlantes +
-                  "<br><br> Superficie Total edifici: " + superficieTotal + "<br><br>";
+        // Placeholder image - replace with actual hotel image if available
+        const placeholderImg = "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+
+        output += `
+            <li class="flex justify-between gap-x-6 py-5">
+                <div class="flex min-w-0 gap-x-4">
+                    <img class="size-12 flex-none rounded-full bg-gray-50" src="${placeholderImg}" alt="Hotel Image" />
+                    <div class="min-w-0 flex-auto">
+                        <p class="text-sm/6 font-semibold text-gray-900">${nomHotel}</p>
+                        <p class="mt-1 truncate text-xs/5 text-gray-500">Habitacions: ${nombreHabitacions}</p>
+                    </div>
+                </div>
+                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                    <p class="text-sm/6 text-gray-900">Plantes: ${nombrePlantes}</p>
+                    <p class="mt-1 text-xs/5 text-gray-500">Superfície: ${superficieTotal} m²</p>
+                </div>
+            </li>`;
     }
 }
+
+output += `</ul>`; // End of the Tailwind list
 
 // Actualitzem l'element HTML amb l'ID "LlistatHotels"
     // Now, safely set the innerHTML because we know llistatHotelsElement exists
