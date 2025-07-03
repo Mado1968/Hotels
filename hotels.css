@@ -1,5 +1,15 @@
 
 
+/* CSS HEX 
+--eerie-black: #23231aff;
+--black-olive: #322f20ff;
+--field-drab: #6a5837ff;
+--olive: #988f2aff;
+--orange-pantone: #fe5f00ff;
+*/
+
+
+
   * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -8,12 +18,14 @@
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #6A5837;
   }
   
   /* Style the top navigation bar */
   .topnav {
     overflow: hidden;
-    background-color: #c2bfbf;
+   
+    background-color: #FE5F00;
   }
   
   /* Style the topnav links */
